@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="cookie.js"></script>
+		<link rel="stylesheet" type="text/css" href="generality.css">
+		<link rel="stylesheet" type="text/css" href="font_sl7hyf8f4fvtpgb9/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="font_tbsvj6av8f2sm7vi/iconfont.css" />
+		<style>
+			
+			#sign-header {height: 145px;border-bottom: 1px #ccc solid;box-shadow: 0px 2px 5px #ddd;}
+			.header-main {width: 965px;margin:0 auto;font-size: 12px;}
+			.header-main img {float: left;margin-top: 40px;}
+			.header-main span {float: right;line-height: 145px;}
+				
+			#main {background:url(images/memberbg.jpg) no-repeat center;}
+			.main {width: 965px;margin:0 auto;height:590px;position: relative;}
+			.register {width: 385px;height: 465px;position:absolute;right:0;border: 1px #ddd solid;box-shadow: 3px 3px 5px #ddd;margin: 60px 0;padding: 30px 45px;}
+			.register div div {height: 38px;border: 1px #ddd solid;margin: 5px 0;padding: 8px;color: #ccc;}
+			.register input {border:none;border-left: 1px solid #ddd;margin-left: 10px;font-size: 12px;color: #7A7A7A;padding-left: 10px;}
+			.register .last {background: #333333;height: 50px;text-align: center;padding: 0;}
+			#warn {display:block;height: 20px;color: red;font-size: 10px;}
+			.register .last span {line-height: 50px; font-size: 15px;cursor: pointer;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+			.qus {display: block;font-size: 12px;float: right;margin-top: 15px;}
+			.register h2 {color: #333333;margin-bottom: 20px;}
+			.qus a {color: blueviolet;}
+			#yanzheng {width:165px;float: left;}
+			#yanzheng input {border: none;padding-left:0}
+			#ma {float: right;height: 38px;border: red 1px solid;width: 110px;margin-top: 5px;background: #7A7A7A;text-align: center;cursor: pointer;}
+			#ma span {line-height: 38px;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+			.register div {overflow: hidden;}
+			#duanxin {width:200px;float: left;}
+			#duanxin input {display: block;position: relative;top: -16px;left: 17px;}
+			.duanxin {float: right;height: 38px;margin-top: 5px;}
+			.duanxin a {color: blueviolet;font-size: 12px;line-height: 38px;}
+			#ma span {line-height: 38px;text-align: center;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="sign-header">
+			<div class="header-main">
+				<a href="home.html"><img src="images/logo_02.png" /></a>
+				<span>需要帮助？&nbsp;&nbsp;<i class="iconfont">&#xe7dd;</i>4000-250-630</span>
+			</div>
+		</div>
+		<div id="main">
+			<div class="main">
+				<div class="register">
+					<h2>注册美西账户</h2>
+					<div><div><i class="iconfont">&#xe69f;</i><input type="text" placeholder="请输入常用手机号" id="phone"></div></div>
+					<div><div id="yanzheng"><input type="text" placeholder="请输入验证码" id="yzm"></div><span id="ma"><span></span></span></div>
+					<div><div id="duanxin"><i class="iconfont">&#xe604;</i><input type="text" placeholder="短信验证码"></div><span class="duanxin"><a href="#">发送验证码</a></span></div>
+					<div><div><i class="iconfont">&#xe67b;</i><input type="password" placeholder="请输入密码" id="pwd"></div></div>
+					<div><div><i class="iconfont">&#xe67b;</i><input type="password" placeholder="再次输入密码" id="pwd2"></div></div>
+					<span id="warn"></span>
+					<div><div class="last" id="sub"><span>注册</span></div></div>
+					<span class="qus">已注册？<a href="login.html">登录</a></span>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer">
+				<img src="images/footer1.png">
+				<div class="left">
+					<div>
+						<ul>
+							<li>
+								<a href="#">媒体报道</a>
+							</li>
+							<li>
+								<a href="#">正品保证</a>
+							</li>
+							<li>
+								<a href="#">业务合作</a>
+							</li>
+							<li>
+								<a href="#">隐私声明</a>
+							</li>
+							<li>
+								<a href="#">加入美西</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+						</ul>
+					</p>
+					<br />
+					<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+					<p>沪ICP备09001221号&nbsp;&nbsp;沪公网安备11010802017116号</p>
+				</div>
+				</div>
+				<div class="right">
+					<div class="rtop">
+						合作伙伴
+					</div>
+					<div class="rbottom">
+						<img src="images/images/footer (6).png" />
+						<img src="images/images/footer (7).png" />
+						<img src="images/images/footer (8).png" />
+						<img src="images/images/footer (9).png" />
+						<img src="images/images/footer (10).png" />
+					</div>
+				</div>
+			
+		</div>
+	</body>
+</html>
+
+<script>
+	var flag=0;
+	$(".register input").blur(function (){
+		flag:0;
+		if ($("#phone").val()=="") {
+			$("#warn").html("请填写手机号")
+		}else {
+			if(!/^\d{11}$/.test($("#phone").val())) {
+			$("#warn").html("用户名格式不正确")
+			}else{
+				flag=1;
+						$("#warn").html("")
+					}
+			}
+	})
+	$("#pwd").blur(function (){
+		flag:0;
+		if ($("#phone").val()=="") {
+			$("#warn").html("请填写手机号")
+		}else {
+			if(!/^\d{11}$/.test($("#phone").val())) {
+			$("#warn").html("用户名格式不正确")
+			}else {
+				if (!/^\d{11}$/.test($("#phone").val())&&!/^\w{6,11}$/.test($("#pwd").val())){
+				$("#warn").html("用户名或密码格式不正确")
+				}else{
+					if(/^\d{11}$/.test($("#phone").val())&&!/^\w{6,11}$/.test($("#pwd").val())){
+						$("#warn").html("密码格式不正确")
+					}else{
+						flag=1;
+						$("#warn").html("")
+					}
+				}
+			}
+		}
+	})
+$("#pwd2").blur(function (){
+	flag:0;
+	if ($("#pwd").val()!=$("#pwd2").val()) {
+		$("#warn").html("两次密码输入不一致")
+	}else{
+		flag=1;
+		$("#warn").html("")
+	}
+	})
+	$("#ma").find("span").html((Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9)))
+	
+$("#yzm").blur(function (){
+	flag:0;
+	if ($("#yzm").val()!="") {
+	if ($("#yzm").val()!=$("#ma").find("span").html()) {
+		$("#warn").html("验证码错误")
+	}else{
+		flag=1;
+		$("#warn").html("")
+	}
+	}
+})
+$("#ma").click(function(){
+	flag:0;
+	$("#ma").find("span").html((Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9))+""+(Math.floor(Math.random()*9)))
+	if ($("#yzm").val()!="") {
+	if ($("#yzm").val()!=$("#ma").find("span").html()) {
+		$("#warn").html("验证码错误")
+	}else{
+		flag=1;
+		$("#warn").html("")
+	}
+	}
+})
+
+$("#sub").click(function(){
+	if (/^\d{11}$/.test($("#phone").val())&&/^\w{6,11}$/.test($("#pwd").val())&&$("#pwd").val()==$("#pwd2").val()&&$("#yzm").val()==$("#ma").find("span").html()&&$("#duanxin").find("input").val()!="") {
+		setCookie("name",JSON.stringify($("#phone").val()),1)
+		setCookie("pwd",JSON.stringify($("#pwd").val()),1)
+		alert("注册成功"+typeof $("#phone").val());
+		location.href="login.html"
+	}else{
+		alert("您的信息填写有误")
+	}
+})
+</script>

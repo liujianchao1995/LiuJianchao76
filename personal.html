@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="cookie.js"></script>
+		<script src="generality.js"></script>
+		<script src="floatcart.js"></script>
+		<script src="Clothes size.js"></script>
+		<link rel="stylesheet" type="text/css" href="font_sl7hyf8f4fvtpgb9/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="generality.css" />
+		<link rel="stylesheet" type="text/css" href="font_tbsvj6av8f2sm7vi/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="font_4x0z3wlu4mpfogvi/iconfont.css" />
+		<style>
+				.main {width: 1200px;margin: 25px auto;overflow: hidden;}
+				
+				
+				.main-left {width: 180px;margin-right: 20px;border: 1px #ddd solid;padding: 20px 15px ;text-align: center;font-size: 12px;float: left;}
+				.main-left p {margin: 10px 0;cursor: pointer;color: #888;}
+				.main-left p a {color: #888;}
+				.main-left p a:hover {color: #333;}
+				.main-left p:hover {color: #333;}
+				.main-left div:first-child :nth-child(2) {font-weight: bold;color: #222;}
+				.main-left div:first-child :nth-child(3) {color: #000000;}
+				.main-left div:first-child :nth-child(4) {height: 27px;width: 95px;margin: 10px auto;background: rgb(245,245,245);border: 1px #ddd solid;border-radius: 5px;line-height: 27px;color: #555;}
+				.main-left div:first-child {border-bottom: 1px #ccc dashed;padding-bottom: 15px;}
+				.main-left div:last-child {margin-top: 15px;}
+				
+				
+				.main-right {overflow: hidden;position: relative;padding: 0 20px;}	
+				.main-right .hide {display: none;}
+				.mr-nav span {font-size: 15px;color: #888;cursor: pointer;display: inline-block;margin-right: 20px;margin-top: 10px;}
+				.mrm-main .jibenshezhi,.kuozhanziliao{border: 1px #ddd solid;padding: 40px;margin-top: 20px;}
+				.mrm-main .title {font-size: 15px;color: #444;} 
+				.mrm-main .title span {display:inline-block;color: #aaa;font-size: 13px;margin-left: 20px;} 
+				.mrm-main .baocun {width: 180px;height: 50px;background: rgb(51,51,51);border-radius: 5px;color: #fff;line-height: 50px;text-align: center;margin-left: 75px;cursor: pointer;}
+				.jbsz-main,.kzzl-main {padding:20px 30px;}
+				.jbsz-main p,.kzzl-main p {height: 33px;line-height: 33px;margin-bottom: 15px;font-size: 13px;color: #555;}
+				.jbsz-main p span,.kzzl-main p span {display: inline-block;height: 33px;line-height: 33px;margin-right: 20px;}
+				.mrm-main input {width: 180px;height: 33px;border: 1px #ddd solid;padding: 0 10px;color: #666;margin-right: 10px;}
+				.jbsz-main p:nth-child(2) input {width: 15px;height: 15px;position: relative;top: 3px;margin:0 10px;}
+				.mrm-main select {width: 177px;height: 30px;padding-left: 5px;color: #666;font-size: 15px;margin-left: 15px;margin-right: 5px;border: 1px #ddd solid;}
+				.jbsz-main p select.year {margin-left: -5px;}
+				.kzzl-main p select {margin-right: 105px;margin-left: 0;}
+				.kzzl-main input {margin-right: 100px;}
+				
+				
+				
+				
+		</style>
+	</head>
+	<body>
+		
+	<div id="top">
+		<div id="top1">
+			<div class="left" id="loginid">
+				<a href="sign.html">注册 </a>|
+				<a href="login.html"> 登录</a> &nbsp;
+				<a href="order.html">订单查询</a>
+			</div>
+			<div class="right"><span>客服热线：400-600-6618</span><span class="guanzhu">☆ 关注我们</span><span id="cart"><i class="iconfont">&#xe63d;</i> 购物袋（<span class="sumcart">0</span>）|<i class="iconfont">&#xf0051;</i></span></div>
+			<div class="floatcart">
+				<div class="hasshop">
+				</div>
+				<div class="noshop">
+					您的购物袋是空的
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div class="left"><img src="images/ewm.jpg"></div>
+		<div class="center"><img src="images/首页1_05.jpg"></div>
+		<div class="search"><input type="text" placeholder="请输入关键字"><span><i class="iconfont">&#xe66f;</i></span></div>
+	</div>
+	<div id="tnav">
+		<div id="nav">
+			<ul id="navnav">
+				<li>
+					<a href="home.html">首页</a>
+				</li>
+				<li class="new">
+					<a href="#">新近单品</a>
+				</li>
+				<li>
+					<a href="#">全球购</a>
+				</li>
+				<li class="women">
+					<a href="#">女士</a>
+				</li>
+				<li class="man">
+					<a href="#">男士</a>
+				</li>
+				<li class="children">
+					<a href="#">童装</a>
+				</li>
+				<li class="clock">
+					<a href="#">腕表</a>
+				</li>
+				<li class="pin">
+					<a href="#">品牌</a>
+				</li>
+				<li>
+					<a href="#">Mzine</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="nav1">
+		<div class="new">
+			<ul>
+				<li>
+					<a href="#">本周新品</a>
+				</li>
+				<li>
+					<a href="#">本月新品</a>
+				</li>
+				<li>
+					<a href="#">当季新品</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">男士 Man</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">配饰 Accessories</a>
+				</li>
+				<li>
+					<a href="#">鞋履 Shoes</a>
+				</li>
+				<li>
+					<a href="#">服装 Clothes</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">女士</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">配饰 Accessories</a>
+				</li>
+				<li>
+					<a href="#">鞋履 Shoes</a>
+				</li>
+				<li>
+					<a href="#">服装 Clothes</a>
+				</li>
+			</ul>
+		</div>
+		<div class="women">
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="man">
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+		</div>
+		<div class="children">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="clock">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="pin">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+
+	<div class="main">
+		<div class="main-left">
+			<div>
+			<img src="images/user_man.png">
+			<p>17621336824</p>
+			<p>普通会员</p>
+			<p>加速升级</p>
+			</div>
+			<div>
+			<p><a href="cart.html">我的购物袋</a></p>
+			<p><a href="order.html">我的订单</a></p>
+			<p><a href="personal.html" style="color: #222;">个人信息</a></p>
+			<p><a href="address.html">我的地址</a></p>
+			<p><a href="personal.html">我的收藏</a></p>
+			<p><a href="quickpayment.html">快捷支付</a></p>
+			</div>
+		</div>
+		<div class="main-right">
+		<div class="mr-nav">
+			<span class="gerenziliao" style="color: #444;">个人资料</span>
+			<span class="xiugaimima">修改密码</span>
+		</div>
+		<div class="mrm-main z1">
+			<div class="jibenshezhi">
+				<p class="title">基本设置<span>请您放心填写,我们承诺妥善保管您个人信息的隐私权</span></p>
+				<div class="jbsz-main">
+					<p><span >昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><input type="text" class="nickname"></p>
+					<p><span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span><input type="radio" name="sex" checked="checked">男士<input type="radio" name="sex">女士</p>
+					<p><span>生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</span>
+						<select class="year">
+						<option>-</option>
+					</select>年
+					<select class="month">
+					<option>-</option>
+					</select>月
+					<select class="day">
+						<option>-</option>
+					</select>日
+					</p>
+					<p><span>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</span><input type="text" class="telephone"></p>
+					<p><span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编</span><input type="text"></p>
+					<div class="baocun">保存</div>
+				</div>
+			</div>
+			<div class="kuozhanziliao">
+					<p class="title">扩展资料<span>我们希望了解您的更多个人信息，以便为您提供更加贴心的服务体验</span></p>
+					<div class="kzzl-main">
+					<p><span>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高</span><input type="text" placeholder="单位：cm"><span>体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重</span><input type="text" placeholder="单位：kg"></p>
+					<p><span>胸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围</span><input type="text" placeholder="单位：cm"><span>腰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围</span><input type="text" placeholder="单位：cm"></p>
+					<p><span>&nbsp;上衣尺码</span><select class="shangyi"></select><span>&nbsp;裤子尺码</span><select class="kuzi"></select></p>
+					<p><span>鞋&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span><select class="xiema"></select><span><span>&nbsp;喜欢颜色</span><input type="text"></p>
+					<div class="baocun">保存</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+		<div class="mrm-main hide z2">
+			<div class="kuozhanziliao">
+			<p class="title">修改密码</p>
+			<div class="kzzl-main">
+				<p><span>原始密码</span><input type="password" class="yuanmima"></p>
+				<p><span>新&nbsp;&nbsp;密&nbsp;&nbsp;码</span><input type="password" class="repwd"></p>
+				<p><span>确认密码</span><input type="password" class="rightpwd"></p>
+				<div class="baocun">保存</div>
+			</div>
+			</div>
+		</div>
+		<div>
+			
+		</div>	
+		</div>
+		
+	</div>
+
+	<div id="serve">
+			<div class="s-left">
+				<ul>
+					<li>购物指南</a></li>
+					<li><a href="#">购物流程</a></li>
+					<li><a href="#">配送方式</a></li>
+				</ul>
+				<ul>
+					<li>支付方式</li>
+					<li><a href="#">如何付款</a></li>
+					<li><a href="#">发票制度</a></li>
+				</ul>
+				<ul>
+					<li>商品说明</li>
+					<li><a href="#">商品尺码</a></li>
+					<li><a href="#">商品包装</a></li>
+				</ul>
+				<ul>
+					<li>客服中心</li>
+					<li><a href="#">七天包换</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="s-center1">
+				<p>客服电话</p>
+				<h1>400-250-630</h1>
+				<p>工作日 08：30-21：30</p>
+				<p>节假日 21：30-08：30</p>
+			</div>
+			<div class="s-center2">
+				<p>订阅美西杂志</p>
+				<p><input type="email" placeholder="E-mail"></p>
+				<p>
+					<div>即刻订阅</div>
+				</p>
+			</div>
+			<div class="s-right">
+				<div class="app">
+					<p>美西APP</p>
+					<div></div>
+				</div>
+				<div class="weixin">
+					<p>官方微信</p>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	<div id="footer">
+			<div class="footer">
+				<img src="images/footer1.png">
+				<div class="left">
+					<p>
+						<ul>
+							<li>
+								<a href="#">媒体报道</a>
+							</li>
+							<li>
+								<a href="#">正品保证</a>
+							</li>
+							<li>
+								<a href="#">业务合作</a>
+							</li>
+							<li>
+								<a href="#">隐私声明</a>
+							</li>
+							<li>
+								<a href="#">加入美西</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+						</ul>
+					</p>
+					<br />
+					<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+					<p>沪ICP备09001221号&nbsp;&nbsp;沪公网安备11010802017116号</p>
+				</div>
+				<div class="right">
+					<div class="rtop">
+						合作伙伴
+					</div>
+					<div class="rbottom">
+						<img src="images/images/footer (6).png" />
+						<img src="images/images/footer (7).png" />
+						<img src="images/images/footer (8).png" />
+						<img src="images/images/footer (9).png" />
+						<img src="images/images/footer (10).png" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	$(function() {
+		if (getCookie("nickname")!="") {
+		$(".nickname").val(getCookie("nickname"))
+	}
+		$(".telephone").val(getCookie("name"))
+		
+		
+		
+		var div = "<option>-</option>"
+		for(var i = 2017; i > 1899; i--) {
+			div += `<option>${i}</option>`
+		}
+		$(".year").html(div)
+		$(".shangyi").html(clothessize)
+	$(".kuzi").html(clothessize)
+	$(".xiema").html(clothessize)
+	})
+	$(".year").change(function() {
+		var div = "<option>-</option>"
+		if($(this).val() != "-") {
+			for(var i = 1; i < 13; i++) {
+				div += `<option>${i}</option>`
+			}
+		}
+		$(".month").html(div)
+		$(".day").html("<option>-</option>")
+	})
+	$(".month").change(function() {
+		var div = "<option>-</option>"
+		if($(this).val() != "-") {
+			for(var i = 1; i < 32; i++) {
+				div += `<option>${i}</option>`
+			}
+		}
+		$(".day").html(div)
+	})
+	$(".gerenziliao").click(function(){
+		$(this).css("color","#444");
+		$(".xiugaimima").css("color","#888")
+		$(".z1").removeClass("hide");
+		$(".z2").addClass("hide")
+	})
+	$(".xiugaimima").click(function(){
+		$(".gerenziliao").css("color","#888")
+		$(this).css("color","#444")
+		$(".z2").removeClass("hide");
+		$(".z1").addClass("hide")
+	})
+	$(".jbsz-main .baocun").click(function(){
+		setCookie("nickname",JSON.stringify($(".nickname").val()),1)
+		alert("信息保存成功")
+		location.reload()
+	})
+	
+	$(".z2 .kzzl-main .baocun").click(function(){
+		if ($(".yuanmima").val()!=getCookie("pwd")) {
+			alert("原密码输入不正确")
+			return false
+		}
+		if (!/^\w{6,11}$/.test($(".repwd").val())){
+			alert("密码格式不正确")
+			return false
+		}
+		if ($(".repwd").val()!=$(".rightpwd").val()) {
+			alert("两次密码输入不一致")
+			return false
+		}
+		setCookie("pwd",JSON.stringify($(".rightpwd").val()),1)
+		alert("密码已修改，请重新登录")
+		removeCookie("uname");
+		removeCookie("upwd");
+		location.href="login.html";
+	})
+	
+	
+</script>
+<script src="floatcart.js"></script>

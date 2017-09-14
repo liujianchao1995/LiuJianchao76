@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="cookie.js"></script>
+		<script src="generality.js"></script>
+		<link rel="stylesheet" type="text/css" href="generality.css">
+		<link rel="stylesheet" type="text/css" href="font_sl7hyf8f4fvtpgb9/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="font_tbsvj6av8f2sm7vi/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="font_4x0z3wlu4mpfogvi/iconfont.css" />
+		<style>
+			
+			#sign-header {height: 145px;border-bottom: 1px #ccc solid;box-shadow: 0px 2px 5px #ddd;}
+			.header-main {width: 1200px;margin:0 auto;font-size: 12px;}
+			.header-main img {float: left;margin-top: 40px;}
+			.header-main span {float: right;line-height: 145px;}
+			
+			.main {width: 1200px;margin: 0 auto;border: 1px #ddd solid;padding: 20px;}
+			.main-nav {margin: 30px 0;border: 1px #ddd solid;}
+			.mn-main {border-left: 1px #ddd solid;height: 58px;padding-left: 75px;background: rgb(244,244,244);}
+			.shouhuoren {margin: 20px;height: 35px;line-height: 35px;overflow: hidden;border-bottom: 1px #ddd solid;padding-bottom: 60px;font-size: 13px;}
+			.shouhuoren span:first-child {float:left;height: 35px;width:105px;line-height: 35px;text-align: center;border: 1px #000 solid;background: url(images/orderico.png) right bottom no-repeat;margin-right: 20px;}
+			.shouhuoren span:nth-child(3) {display: inline-block;margin-left: 500px;}
+			.shouhuoren span:nth-child(4) {float: right;}
+			.shouhuoren span:nth-child(5) {float: right;}
+			.zhifufangshi {margin: 20px;border-bottom: 1px #ddd solid;padding-bottom: 20px;font-size: 13px;}
+			.zhifufangshi p {margin: 16px 0;color: #888;}
+			.zhifufangshi p:nth-child(1) span {border: 1px #ddd solid;display: inline-block;height: 35px;line-height: 35px;text-align: center;color: #555;padding:0 20px;margin-right: 30px;cursor: pointer;}
+			.zhifufangshi p:nth-child(1) span.active {display: inline-block;height: 35px;line-height: 35px;text-align: center;border: 1px #000 solid;background: url(images/orderico.png) right bottom no-repeat;color: #555;}
+			.zhifufangshi p:nth-child(1) span:nth-child(2) {border: 1px #ddd solid;display: inline-block;height: 35px;line-height: 35px;text-align: center;color: #555;}
+			.peisongyaoqiu textarea {width: 640px;height: 50px;color: #ddd;padding: 5px;border: 1px #ddd solid;}
+			.peisongyaoqiu span {float: left;margin-right: 20px;font-size: 13px;}
+			.peisongyaoqiu {margin: 20px;border-bottom: 1px #ddd solid;overflow: hidden;padding-bottom: 20px;}
+			table {margin: 20px;font-size: 13px;}
+			table img {width: 70px;float: left;}
+			table tr td {width: 245px;height:110px;text-align: center;line-height: 110px;border-bottom: 1px #ddd solid;border-collapse: collapse;}
+			table tr td:nth-child(1) {width: 370px;text-align: left;padding-left: 40px;}
+			table tr td:nth-child(1) div {float: left;position: relative;top:15px;line-height:normal;margin-left: 50px;color: #666;}
+			table tr:first-child td {background: rgb(245,245,245);height: 35px;line-height: 35px;border: none;}
+			.youhuiquan {margin: 20px;margin-bottom:0;font-size: 13px;}
+			.youhuiquan p {margin: 16px 0;color: #888;}
+			.youhuiquan p:nth-child(1) span {border: 1px #ddd solid;display: inline-block;height: 35px;line-height: 35px;text-align: center;color: #555;padding:0 20px;margin-right: 30px;cursor: pointer;}
+			.youhuiquan p:nth-child(1) span.active {display: inline-block;height: 35px;line-height: 35px;text-align: center;border: 1px #000 solid;background: url(images/orderico.png) right bottom no-repeat;color: #555;}
+			.youhuiquan .zhenyhq {overflow: hidden;}
+			.zhenyhq>div {width: 250px;height: 120px;margin: 10px;border: 1px #ddd solid;box-shadow: 5px 5px 5px #ddd;float: left;background: url(images/hongtiao.png) no-repeat center top;padding: 20px;font-size: 13px;cursor: pointer;}
+			.zhenyhq>div.active {background: url(images/hongtiao.png) no-repeat center top,url(images/orderico.png) no-repeat right bottom;}
+			.quan180 .qt {border-bottom: 1px #ddd dashed;overflow: hidden;padding-bottom: 10px;}
+			.qtl {float: left;}
+			.quan180 .qtl span {font-size: 30px;float: right;line-height: 30px;}
+			.qtr {float: right;font-size: 11px;}
+			.qtr span:last-child{color: #aaa;}
+			.qb {margin-top: 10px;font-size: 11px;}
+			.qb span:first-child {color: #aaa;}
+			
+			.goumai {width: 1200px;background: rgb(252,252,252);margin: 0 auto;overflow: hidden;border: 1px #ddd solid;border-top: none;margin-bottom: 30px;padding-bottom: 35px;}
+			.goumai .floatright {float: right;width: 275px;padding: 20px;font-size: 15px;}
+			.goumai .floatright p {overflow: hidden;margin: 10px 0;}
+			.goumai .floatright p span:first-child {color: #aaa;}
+			.goumai .floatright p span:last-child {float: right;}
+			.goumai .floatright div {width: 155px;height: 45px;background: rgb(196,63,64);line-height: 45px;text-align: center;color: #fff;float: right;font-weight: bold;border-radius: 5px;cursor: pointer;}
+			
+			.bianjihide {display: none;margin: 0 10px;color: blueviolet;cursor: pointer;}
+			.jiayouhuiquan {display:none;line-height: 30px;}
+			.jiayouhuiquan input {width: 203px;height: 30px;border: #ddd 1px solid;position: relative;top: -2px;margin-top: 20px;}
+			.jiayouhuiquan .shiyong {display: inline-block;height: 30px;line-height: 30px;border: #ddd 1px solid;border-left: none;padding: 0 5px;cursor: pointer;margin-right: 20px;}
+			.jiayouhuiquan .hide {display:none;border: none;color: red;font-size: 12px;}
+			
+			
+			/*添加收货地址*/
+			.mask {width: 100%;background: #000;opacity: 0.3;z-index: 100;position: absolute;}
+				.addressmain {width: 643px;height: 452px;background: #fff;position: fixed;z-index: 101;left: 0;top: 0;right: 0;bottom: 0;margin: auto;display: none;}
+				.addressmain .am-top {height: 60px;background: rgb(248,248,248);padding: 0 20px;line-height: 60px;font-size: 13px;color: #aaa;}
+				.addressmain .am-main {height: 392px;padding:20px 50px;overflow: hidden;font-size: 13px;color: #555;}
+				.selectaddress {float: left;font-size: 11px;color: #aaa;}
+				.am-main input {height: 35px;border: 1px #ddd solid;margin-left: 10px;padding-left: 10px;color: #666;}
+				.am-main p {margin: 15px 0;}
+				.am-main p:first-child input:first-child {width: 150px;margin-right: 88px;}
+				.am-main p:nth-child(2){overflow: hidden;margin: 0;}
+				select {height: 34px;width: 135px;border: 1px #ddd solid;margin-right: 24px;color: #777;}
+				.am-main .slc div {float: left;height: 34px;line-height: 34px;}
+				.am-main div:first-child {margin-right: 12px;}
+				.xiangxidizhi {position: relative;left: -5px;}
+				.shenfenzheng {position: relative;left: -17px;}
+				.youbian {position: relative;left: 3px;}
+				.xiangxidizhi input,.youbian input,.shenfenzheng input{width:452px;}
+				.am-top span {float: right;cursor: pointer;font-size: 20px;}
+				#baocundizhi {height: 40px;line-height: 40px;position: relative;top: 20px;}
+				#bcdz {background: rgb(51,51,51);width: 140px;height: 40px;color: #fff;text-align: center;line-height: 40px;position: absolute;left: 200px;cursor: pointer;}
+				#woyaokule {line-height: 40px;height: 40px;position: absolute;top: -2px;margin-left: 15px;}
+				#tishi {color: red;font-size: 12px;text-align: center;line-height: 34px;height: 34px;margin-top:20px;position: relative;}
+			
+			
+			
+			
+		</style>
+		
+		<title></title>
+	</head>
+<body>
+	<div class="mask"></div>	
+	<div class="addressmain">
+		<div class="am-top">
+			新增收货信息<span>X</span>
+		</div>
+		<div class="am-main">
+		<p>
+			收 货 人<input type="text" id="arname"/>手机号码<input type="text" id="arphone"/>
+		</p>
+		<p><div class="slc">
+			<div>
+			地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区
+			</div>
+			<div class="city-picker-select"></div></div>
+			<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+		</div>
+		</p>
+		<p class="xiangxidizhi">
+			详细地址<input type="text"/>
+		</p>
+		<p class="shenfenzheng">
+			身份证号码<input type="text"/>
+		</p>
+		<p class="youbian">
+			邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编<input type="text"/>
+		</p>
+		<p id="baocundizhi">
+			<input type="checkbox" /><span id="woyaokule">设为默认</span><span id="bcdz">保存地址</span>
+		</p>
+		<p id="tishi">
+			
+		</p>
+	</div>
+	</div>
+	
+	
+	
+	
+	<div id="sign-header">
+		<div class="header-main">
+			<a href="home.html"><img src="images/logo_02.png" /></a>
+			<span>需要帮助？&nbsp;&nbsp;<i class="iconfont">&#xe7dd;</i>4000-250-630</span>
+		</div>
+	</div>
+
+	<div class="main-nav">
+		<div class="mn-main">
+			<img src="images/ordernav.gif">
+		</div>
+	</div>
+	<div id="cebianlan">
+			<ul>
+				<li>
+					<a href="http://www.meici.com/app"><i class="iconfont">&#xe666;</i></a>
+				</li>
+				<li>
+					<a href="http://10086.com"><i class="iconfont">&#xe640;</i></a>
+				</li>
+				<li>
+					<a href="http://qq.com"><i class="iconfont">&#xe613;</i></a>
+				</li>
+				<li><i class="iconfont">&#xf0051;</i></li>
+			</ul>
+			<div class="er"><img src="images/down_app.png"></div>
+		</div>
+	<div class="main">
+
+		<p>收货人信息</p>
+		<div class="shouhuoren">
+			<span>1</span><span class="arloca"></span><span class="arphone"></span><span class="bianjihide edit"> 删除 </span><span class="bianjihide delete"> 编辑 </span></div>
+		<p>支付方式</p>
+		<div class="zhifufangshi zhifu">
+			<p><span class="active">在线支付</span><span class="">快捷支付</span></p>
+			<p class="haha">支持多家银行借记卡、信用卡支付。支付宝支付，微信等多种支付平台；支持美西礼品卡支付。</p>
+			<p>*如有疑问请致电4000-250-630&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司地址：上海市杨宅路258号A201</p>
+		</div>
+		<p>配送信息</p>
+		<div class="zhifufangshi xinxi">
+			<p><span class="active">所有日期均可收货</span><span>仅工作日收货</span><span>仅双休日，节假日收货</span></p>
+			<p>温馨提示：我们会努力按照您指定的时间配送，但因天气、交通等各类因素影响，您的订单有可能会有延误现象。</p>
+		</div>
+		<p>包装方式</p>
+		<div class="zhifufangshi baozhuang">
+			<p><span class="active">美西标准包装（免费）</span><span>美西礼品包装（10元）</span></p>
+			<p>标准包装内放置我们的白色美西盒子，更加坚固的保护您的货品</p>
+			<img src="images/pic_pack01.jpg" />
+		</div>
+		<div class="peisongyaoqiu"><span>配送要求:</span><textarea placeholder="您可以在此填写特殊要求..."></textarea></div>
+		<p>商品清单</p>
+		<div class="shangpinqingdan">
+			<table class="huowu">
+				<tr>
+					<td>商品信息</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>小计</td>
+				</tr>
+				<!--<tr>
+					<td>
+						<img src="images/new-img/xin (2).jpg">
+						<div>
+							<p>Gucci 古驰</p>
+							<p>圆领 羊毛 男士 长袖针织/毛衫 </p>
+							<p>颜色：绿色 尺码：48</p>
+						</div>
+					</td>
+					<td>￥8885.00</td>
+					<td>1</td>
+					<td>￥8,885.00</td>
+				</tr>-->
+			</table>
+		</div>
+		<p>使用优惠券</p>
+		<div class="youhuiquan">
+			<p><span class="active">可使用优惠券（4）</span><span>兑换优惠券</span></p>
+			<div class="zhenyhq">
+				<div class="quan180 active">
+					<div class="qt">
+						<div class="qtl">
+							¥<span>180</span>
+						</div>
+						<div class="qtr">
+							<span>满3000.00可抵用180元</span>
+							<br/>
+							<span>旅行季3000-180</span>
+						</div>
+					</div>
+					<div class="qb">
+						<span>使用期限：</span>
+						<br />
+						<span>2017/09/12 - 2017/09/15</span>
+					</div>
+				</div>
+				<div class="quan180">
+					<div class="qt">
+						<div class="qtl">
+							¥<span>188</span>
+						</div>
+						<div class="qtr">
+							<span>满500.00可抵用188元</span>
+							<br/>
+							<span>新客优惠券</span>
+						</div>
+					</div>
+					<div class="qb">
+						<span>使用期限：</span>
+						<br />
+						<span>2017/06/29 - 2018/01/01</span>
+					</div>
+				</div>
+				<div class="quan180">
+					<div class="qt">
+						<div class="qtl">
+							¥<span>200</span>
+						</div>
+						<div class="qtr">
+							<span>满2000.00可抵用200元</span>
+							<br/>
+							<span>新客优惠券</span>
+						</div>
+					</div>
+					<div class="qb">
+						<span>使用期限：</span>
+						<br />
+						<span>2017/06/29 - 2018/01/01</span>
+					</div>
+				</div>
+				<div class="quan180">
+					<div class="qt">
+						<div class="qtl">
+							¥<span>500</span>
+						</div>
+						<div class="qtr">
+							<span>满5000.00可抵用500元</span>
+							<br/>
+							<span>新客优惠券</span>
+						</div>
+					</div>
+					<div class="qb">
+						<span>使用期限：</span>
+						<br />
+						<span>2017/06/29 - 2018/01/01</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="jiayouhuiquan">
+				<input type="text" /><span class="shiyong">使用</span><span class="hide">您输入的优惠券代码有误，请重新输入。</span>
+			</div>
+			<p>* 特惠商品及部分指定品牌、品类不可使用优惠券；详情请参看商品介绍页面。</p>
+		</div>
+	</div>
+	<div class="goumai">
+		<div class="floatright">
+			<p><span>合&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计 :</span><span class="heji">¥<b>30838.00</b></span></p>
+			<p><span>运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费 :</span><span>¥0.00</span></p>
+			<p><span>包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装 :</span><span>¥0.00</span></p>
+			<p><span>优&nbsp;惠&nbsp;券 :</span><span class="jianmian">-¥<b>200.00</b></span></p>
+			<p><span>活动折扣 :</span><span>-¥0.00</span></p>
+			<p><span>会员折扣 :</span><span>-¥0.00</span></p>
+			<p><span>返现账户支付 :</span><span>-¥0.00</span></p>
+			<p><span>合计 :</span><span class="zongji">¥<b>30638.00</b></span></p>
+			<div>提交订单</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="footer">
+			<img src="images/footer1.png">
+			<div class="left">
+				<div>
+					<ul>
+						<li>
+							<a href="#">媒体报道</a>
+						</li>
+						<li>
+							<a href="#">正品保证</a>
+						</li>
+						<li>
+							<a href="#">业务合作</a>
+						</li>
+						<li>
+							<a href="#">隐私声明</a>
+						</li>
+						<li>
+							<a href="#">加入美西</a>
+						</li>
+						<li>
+							<a href="#">联系我们</a>
+						</li>
+					</ul>
+					</p>
+					<br />
+					<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+					<p>沪ICP备09001221号&nbsp;&nbsp;沪公网安备11010802017116号</p>
+			</div>
+				</div>
+				<div class="right">
+					<div class="rtop">
+						合作伙伴
+					</div>
+					<div class="rbottom">
+						<img src="images/images/footer (6).png" />
+						<img src="images/images/footer (7).png" />
+						<img src="images/images/footer (8).png" />
+						<img src="images/images/footer (9).png" />
+						<img src="images/images/footer (10).png" />
+					</div>
+			</div>
+		</div>
+</body>
+
+</html>
+<script type="text/javascript" src="area/citydata.js"></script>
+<script type="text/javascript" src="area/cityPicker-1.0.0.js?v=1"></script>
+<script>
+	
+	
+	//空地址警告
+	if (getCookie("address")=="") {
+		alert("请完善收货地址")
+		dizhi()
+	}
+	
+	//自动显示收货地址
+	$(".arphone").html(getCookie("address").arphone)
+	$(".arloca").html(getCookie("address").arloca)
+	
+	//编辑收货地址功能
+	$(".shouhuoren").hover(function() {
+		$(".bianjihide").toggle()
+	})
+	
+	
+	//页面点击功能块
+	$(".zhifu p:first span").click(function() {
+		$(".zhifufangshi p:first span").removeClass("active").css("border", "#ddd 1px solid")
+		$(this).addClass("active").css("border", "#000 1px solid")
+		if($(this).index() == "1") {
+			$(".zhifu .haha").html("不需开通网银，即可完成支付。<a href='http://www.meici.com/services/PaymentInstructions.html?forOrder' style='color: red;'>查看支持银行卡</a>")
+		} else {
+			$(".zhifu .haha").html("支持多家银行借记卡、信用卡支付。支付宝支付，微信等多种支付平台；支持美西礼品卡支付。")
+		}
+	})
+	$(".xinxi p:first span").click(function() {
+		$(".xinxi p:first span").removeClass("active").css("border", "#ddd 1px solid")
+		$(this).addClass("active").css("border", "#000 1px solid")
+	})
+	$(".baozhuang p:first span").click(function() {
+		$(".baozhuang p:first span").removeClass("active").css("border", "#ddd 1px solid")
+		$(this).addClass("active").css("border", "#000 1px solid")
+		if($(this).index() == "1") {
+			$(".baozhuang img").attr("src", "images/pic_pack03.jpg")
+		} else {
+			$(".baozhuang img").attr("src", "images/pic_pack01.jpg")
+		}
+	})
+	$(".youhuiquan p:first span").click(function() {
+		$(".youhuiquan p:first span").removeClass("active").css("border", "#ddd 1px solid")
+		$(this).addClass("active").css("border", "#000 1px solid")
+		if($(this).index() == "1") {
+			$(".zhenyhq").hide()
+			$(".jiayouhuiquan").show()
+		} else {
+			$(".zhenyhq").show()
+			$(".jiayouhuiquan").hide()
+		}
+	})
+	$(".shiyong").click(function() {
+		$(".jiayouhuiquan .hide").show()
+	})
+	$(".zhenyhq>div").click(function() {
+		$(".zhenyhq>div").removeClass("active")
+		$(this).addClass("active")
+		haha()
+	})
+	$(".goumai .floatright div").click(function() {
+		alert("您的账户余额不足，无法提交该订单")
+	})
+	$(".delete").click(function(){
+		dizhi()
+	})
+	$(".edit").click(function(){
+		removeCookie("address");
+		alert("您删除了默认的收货地址，确认跳转至收货地址设置页面")
+		location.href="address.html"
+	})
+	
+	//需购物显示
+	$(function(){
+	var hf=location.href;
+	var arr=hf.split("?")[1];
+	var shop=Number(arr.split("&")[0].split("=")[1])+1;
+	
+	//跳转来自购物车
+	if (shop=="0") {
+			var arr = getCookie("shoplist");
+			var brr=getCookie("cartlist");
+			if (brr.length==0) {
+				alert("您还没有选中需要结算的商品，请返回选购")
+				location.href="cart.html"
+			}
+		var html = "";
+		for(var i in brr) {
+			var shopinfo = arr[brr[i]];
+			html += `<tr><td>
+						<img src="${shopinfo.src}">
+						<div>
+							<p>${shopinfo.name}</p>
+							<p>${shopinfo.type}</p>
+							<p>颜色：绿色 尺码：48</p>
+						</div>
+					</td>
+					<td class="price">￥<b>${shopinfo.price}<b></td>
+					<td class="shop-count">${shopinfo.count}</td>
+					<td class="sumPrice">￥<b>${shopinfo.count*shopinfo.price}.00<b></td></tr>`
+		}
+		$(".huowu").append(html)
+		haha()
+	}
+	
+	
+	//跳转来自详情页
+	else if (shop>0) {
+		var danjian=`<tr>
+					<td>
+						<img src="images/new-img/xin (${shop}).jpg">
+						<div>
+							<p>Gucci 古驰</p>
+							<p>男士 皮革 短线包 </p>
+							<p>颜色：黑色 尺码：48</p>
+						</div>
+					</td>
+					<td class="price">￥<b>2710.00</b></td>
+					<td class="shop-count">1</td>
+					<td class="sumPrice">￥<b>2710.00<b></td>
+				</tr>`;
+		$(".huowu").append(danjian);
+		haha()
+	}
+	})
+	
+	
+	//合计结算
+	function haha(){
+		var sumprice=0
+		$(".sumPrice").each(function(index){
+			sumprice+=Number($(this).find("b").text())
+		})
+		$(".heji b").text(sumprice)
+		$(".jianmian b").text($(".zhenyhq .active .qtl span").text())
+		$(".zongji b").text(parseInt($(".heji b").text())-parseInt($(".jianmian b").text())+".00")		
+	}
+	function dizhi(){
+		$(".mask").height($("#footer").height() + $("#footer").offset().top)
+		$("#tishi").html("")
+		$(".addressmain").find("input").val("")
+		$(".addressmain").show()
+		
+		$(".am-top span").click(function() {
+		$(".addressmain").hide()
+		$(".mask").height("0")
+	})
+		$(function() {
+		//原生城市-无联动
+		var select = $('.city-picker-select').cityPicker({
+			dataJson: cityData,
+			renderMode: false,
+			linkage: false
+		});
+		$("select").change(function() {
+			$(this).find("option").each(function() {
+				if($(this).val() == $(this).parent().val()) {
+					console.log($(this).data("title"));
+				}
+			})
+		})
+	});
+	
+	//保存地址设置
+	$("#bcdz").click(function() {
+		if(!/^.+$/.test($(".xiangxidizhi").find("input").val())) {
+			$("#tishi").html("详细地址不能为空")
+			return false
+		} else if(!/^.+$/.test($("#arname").val())) {
+			$("#tishi").html("收货人不能为空")
+			return false
+		} else if(!/^\d{11}$/.test($("#arphone").val())) {
+			$("#tishi").html("手机号格式不正确")
+			return false
+		} else if($("select").eq(2).val() == "请选择区县") {
+			console.log($("select").eq(2).val())
+			$("#tishi").html("地区不能为空")
+			return false
+		} else {
+			$("#tishi").html("新地址添加成功")
+			setTimeout(function() {
+				$(".addressmain").hide()
+				$(".mask").height("0")
+
+			}, 300)
+			var diqu = []
+			$("select").each(function() {
+				$(this).find("option").each(function() {
+					if($(this).val() == $(this).parent().val()) {
+						diqu.push($(this).data("title"));
+					}
+				})
+			})
+
+			var div = `<div class="add chenggong">
+			<div class="bianji">
+					<span class="s1"></span>
+					<span class="s2">删除</span>
+					<span class="s3">设为默认</span>
+				</div>
+				<p>${$("#arname").val()}</p>
+				<p>${$("#arphone").val()}</p>
+				<p>${diqu[0]} ${diqu[1]} ${diqu[2]} ${$(".xiangxidizhi").find("input").val()}</p>
+			</div>`
+			$(".main-right").prepend(div)
+			
+			var addressjson = {
+				"arname": $("#arname").val(),
+				"arphone": $("#arphone").val(),
+				"arloca": `${diqu[0]} ${diqu[1]} ${diqu[2]} ${$(".xiangxidizhi").find("input").val()}`,
+			}
+			setCookie("address", JSON.stringify(addressjson),"1")
+			location.reload()
+		}
+	})	
+		}
+</script>

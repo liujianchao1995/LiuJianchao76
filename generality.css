@@ -1,0 +1,89 @@
+@charset "UTF-8";
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			body {font-family: "微软雅黑";width: 100%;}
+			a {text-decoration: none;color: #666}
+			ul li {list-style: none}
+			input:focus,textarea:focus {outline:none;}
+			i {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+			
+			
+			#top1,#header,#nav,.nav2,.footer {width:965px;margin: 0 auto;overflow: hidden}
+			#top {height: 35px;background: #f4f4f4;}
+			#top .left {float: left}
+			#top .right {float: right}
+			#top1 {position: relative;overflow: initial;}
+			#top1 a,#top1 span{color: #7a7a7a;line-height: 35px;margin: 0 9px;font-size: 11px}
+			#top .guanzhu {cursor: pointer;}
+			#top #cart {cursor: pointer;}
+			
+			#header {height: 100px;}
+			#header div {float: left}
+			#header .left {margin-right: 158px;}
+			#header .search {float: right;font-size: 14px;position: relative;margin: 40px 0;}
+			.search input {height: 25px;width: 160px;line-height: 100px;border: none;border-bottom: #ddd 1px solid;font-size: 10px;}
+			#header .search span {display:block;width: 20px;height: 20;position: absolute;top: 3px;left: 140px;}
+			
+			
+			#tnav {border-bottom:1px solid #ddd;box-shadow: 0 3px 5px #eee;}
+			#nav {height: 80px;}
+			#nav ul li {float: left;width: 107px;line-height: 80px;text-align: center;list-style: none;font-size: 11px;color: #666666;font-weight: bold;transition: all 0.5s;}
+			#nav ul li:hover {background:#eee;}
+			
+			#nav1 {background:rgba(255,255,255,0.9);position: absolute;width: 100%;z-index: 99;}
+			#nav1 div {display: none}
+			#nav1 .nav2 { display: flex;justify-content: space-around;align-content: space-around;padding: 35px 0 75px 0;font-size:11px;line-height: 30px}
+			#nav1 .nav2 ul:nth-child(1) {font-weight: bold}
+			#nav1 .nav2 ul li:nth-child(1) {font-weight: bold}
+			
+			
+			#cebianlan {position: fixed;right: 5px;top: 44%;}
+			#cebianlan ul li{width: 55px;height: 53px;border: 1px #eee solid;text-align: center;background: #fff;}
+			#cebianlan ul li .iconfont {font-size: 30px;line-height: 53px;color: #AAAAAA;}
+			#cebianlan ul li:hover {background: rgb(102,102,102);}
+			#cebianlan ul li:hover .iconfont {background: rgb(102,102,102);color: #fff;}
+			#cebianlan .er {width: 90px;height: 90px;background: #fff;padding: 11px;border: #eee 1px solid;position: fixed;right: 70px;top: 42%;display: none;}
+			
+			
+			#serve {width: 965px;margin: 50px auto;display: flex;margin-top: 100px;}
+			#serve .s-left {width: 241px;overflow: hidden;border-right: 1px #ddd solid;}
+			.s-left ul {float: left;margin-right: 40px;}
+			.s-left ul li {font-size: 10px;color: #404040;line-height: 25px;}
+			.s-left ul li:first-child {font-size: 11px;font-weight: bold;line-height: 30px;}
+			.s-center1 {display: flex;flex-direction: column;justify-content:space-around;align-items: center;width: 241px;font-size: 10px;border-right: 1px #ddd solid;}
+			.s-center2 {display: flex;flex-direction: column;justify-content:space-around;align-items: center;width: 241px;border-right: 1px #ddd solid;font-size: 11px;}
+			.s-center2 input {width: 200px;height: 45px;padding: 15px;border: 1px #ddd solid;background: #eee;}
+			.s-center2 div {width: 200px;height: 47px;color: #fff;background: #000;text-align: center;padding: 12px;font-size: 15px;cursor: pointer;}
+			.s-right {display: flex;justify-content:space-around;align-content:space-around;width: 241px;font-size: 11px;}
+			.s-right div p {text-align: center;margin-bottom: 12px;}
+			.s-right div div{width: 100px;height: 100px;border: 1px #ccc solid;box-shadow: 3px 3px 5px  #ccc;}
+			.s-right .app div {background:url(images/down_app.png) center no-repeat}
+			.s-right .weixin div {background:url(images/wechat.png) center no-repeat}
+			
+			
+			#footer {background:#414141;}
+			.footer>img {width: 100%;}
+			#footer .footer .left {color: #aaa;font-size: 10px;float: left;}
+			.footer .left p {margin: 20px 0;}
+			.footer a {color: #aaa;}
+			.footer .left ul li {float: left;border-right: 1px solid #aaa;padding:0 10px;}
+			.footer .left ul li:last-child {border: none;}
+			.footer .left ul li:first-child {padding-left: 0;}
+			#footer .footer .right {float: right;text-align: center;color: #aaa;font-size: 12px;margin-top: 10px;}
+			#footer .footer .right img {margin:20px 30px;}
+
+			.floatcart {width: 380px;background: #fff;position: absolute;right: 0px;top: 35px;z-index: 99;overflow: hidden;padding-top: 20px;border: 1px #eee solid;display: none;box-shadow: 2px 2px 5px #ddd;}
+			.floatcart .hasshop .ft {font-size: 11px;margin-left: 30px;margin-bottom: 10px;}
+			.floatcart .hasshop .cmain {padding:5px 20px;font-size: 11px;padding-top: 5px;height: 100px;}
+			.floatcart .hasshop .cmain div {float: left;}
+			.floatcart .hasshop .cmain img {width: 67px;height: 75px;}
+			.floatcart .hasshop .shopsum {background: rgb(247,247,247);font-size: 13px;overflow: hidden;padding: 10px 15px;}
+			.floatcart .hasshop .shopsum .szuo {float: left;}
+			.floatcart .hasshop .shopsum .szuo .sumPrice {color: blue;}
+			.floatcart .hasshop .shopsum .syou {width: 110px;height: 40px;background: rgb(51,51,51);color: #fff;float: right;line-height: 40px;text-align: center;}
+			.floatcart .noshop {display: none;text-align: center;line-height: 77px;color: #ddd;}
+			.floatcart .hasshop .p1 {font-size: 13px;color: #666;}
+			.floatcart .hasshop .p2 {font-size: 11px;color: #aaa;}
+			.floatcart .hasshop .p3 span {color: blue;font-size: 11px;}
+			.floatcart .hasshop .p3 span.shop-count2 {font-size: 10px;color: #ddd;}
+			.floatcart .hasshop .delshop {font-size: 30px;position: relative;left: 100px;color: #ddd;cursor: pointer;}
+			.loac {cursor: pointer;}

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="cookie.js"></script>
+		<script src="generality.js"></script>
+		<link rel="stylesheet" type="text/css" href="font_sl7hyf8f4fvtpgb9/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="generality.css" />
+		<style>
+			.tmain {background: rgb(245,245,245);padding-top: 25px;margin-top: 3px;}
+			.main {width: 965px;margin: 0px auto;overflow: hidden;}
+			.main .center-top {height: 75px;background: #fff;padding-left: 20px;}
+			.main .center-top h3 {line-height: 75px;font-weight: normal;font-size: 30px;color: #444;}
+			.main .left {width: 270px;margin-right: 10px;float: left;}
+			.main .right {width: 685px;margin-top: 10px;overflow: hidden;float: right;margin-bottom: 60px;}
+			.shaixuan {padding: 20px;padding-bottom:0;background: #fff;color: #7A7A7A;margin-top: 10px;}
+			.m-tit {font-size: 11px;overflow: hidden;border-bottom: 1px #eee solid;padding-bottom: 5px;}
+			.m-tit span {float:right;font-size: 20px;cursor: pointer;position: relative;top: -5px;}
+			.shaixuan ul {font-size: 10px;}
+			.shaixuan ul li {margin: 10px 0;cursor: pointer;}
+			.shaixuan ul li ul li:hover {color:#555;}
+			.shaixuan ul li ul {display: none;margin-left: 12px;}
+			.shaixuan ul li input {position:relative ;top: 3px;margin-right: 10px;}
+			.del {font-size: 10px;color: #AAAAAA;cursor: pointer;margin: 8px 0;text-align: right;}
+			#pinpai ul {height: 260px;overflow: auto;}
+			#jiage input {width: 106px; height: 32px;margin-top: 14px;padding-left: 8px;border: 1px #bbb solid;}
+			.queren {height: 30px;margin-top: 10px;background: rgb(51,51,51);text-align: center;}    .queren span {line-height: 30px;font-size: 12px;color: #fff;}
+			#clr {overflow: hidden;}
+			#clr ul li {float: left;margin: 3px 0;margin-right: 40px;}
+			#clr ul li span {display: inline-block;height: 20px;width: 20px;background: red;position: relative;top: 5px;margin-right: 5px;}
+			#clr input {top: 2px;}
+			.hide {display:none;padding-bottom: 15px;overflow: hidden;}
+			.default {display: block;}
+			#clr ul li:nth-child(1) span {background: black;}
+			#clr ul li:nth-child(2) span {background: #eee}
+			#clr ul li:nth-child(3) span {background: pink;}
+			#clr ul li:nth-child(4) span {background: red;}
+			#clr ul li:nth-child(5) span {background: green;}
+			#clr ul linth-child(6) span: {background: gray;}
+			#clr ul li:nth-child(7) span {background: goldenrod}
+			#clr ul li:nth-child(8) span {background: silver;}
+			#clr ul li:nth-child(9) span {background: brown;}
+			#clr ul li:nth-child(10) span {background: purple;}
+			#clr ul li:nth-child(11) span {background:-webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);background:-o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);background:-moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);background:linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+}
+			.main .right .right-top {height: 53px;background: #fff;font-size: 11px;color: #7A7A7A;padding-left: 15px;}
+			.main .right .right-top span {line-height: 53px;cursor: pointer;display: inline-block;margin-right: 40px;}
+			.main .right .right-top span:first-child {font-weight: bold;cursor: auto;color: #333}
+			.main .right div {margin-bottom: 5px;}
+			.shoplist div {height: 341px;width: 168px;background: #fff;padding: 18px;font-size: 11px;float: left;margin-right: 4px;}
+			.shoplist div:nth-child(4n) {margin-right: 0;}
+			.shoplist div img {width: 100%;margin: 20px 0;cursor: pointer;}
+			.shoplist div span {color: #aaa;text-decoration:line-through;}
+			.shoplist div p {margin-top: 10px;cursor: pointer;}
+			.shoplist div .bold {color: #111;font-weight: bold;}
+			.shoplist div p:last-child {color: red;margin-left: 5px;margin-top: 15px;cursor: auto;}
+			.shaitop {padding: 20px;background: #fff;color: #7A7A7A;margin-top: 10px;display: none;}
+			.shaitop .m-tit {padding-bottom: 17px;}
+			.shaitop .oneh {overflow: hidden;font-size: 11px;color: #888;margin: 10px 0;}
+			.shaitop .oneh1 {float: left;cursor: pointer;}
+			.shaitop .oneh1 span:nth-child(2):hover {color: #111;}
+			.shaitop .oneh2 {float: right;font-size: 9px;cursor: pointer;cursor: pointer;}
+			.shaitop .oneh2:hover {color: #111;}
+			.shaitop .twoh {height: 32px;line-height: 32px;text-align: center;color: #aaa;background: #fafafa;border: 1px #ddd solid;font-size: 11px;cursor: pointer;}
+			.shaitop .twoh:hover {color: #111;}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+		<div id="top1">
+			<div class="left" id="loginid">
+				<a href="sign.html">注册 </a>|
+				<a href="login.html"> 登录</a> &nbsp;
+				<a href="order.html">订单查询</a>
+			</div>
+			<div class="right"><span>客服热线：400-600-6618</span><span class="guanzhu">☆ 关注我们</span><span id="cart"><i class="iconfont">&#xe63d;</i> 购物袋（<span class="sumcart">0</span>）|<i class="iconfont">&#xf0051;</i></span></div>
+			<div class="floatcart">
+				<div class="hasshop">
+				</div>
+				<div class="noshop">
+					您的购物袋是空的
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div class="left"><img src="images/ewm.jpg"></div>
+		<div class="center"><img src="images/首页1_05.jpg"></div>
+		<div class="search"><input type="text" placeholder="请输入关键字"><span><i class="iconfont">&#xe66f;</i></span></div>
+	</div>
+	<div id="tnav">
+		<div id="nav">
+			<ul id="navnav">
+				<li>
+					<a href="home.html">首页</a>
+				</li>
+				<li class="new">
+					<a href="#">新近单品</a>
+				</li>
+				<li>
+					<a href="#">全球购</a>
+				</li>
+				<li class="women">
+					<a href="#">女士</a>
+				</li>
+				<li class="man">
+					<a href="#">男士</a>
+				</li>
+				<li class="children">
+					<a href="#">童装</a>
+				</li>
+				<li class="clock">
+					<a href="#">腕表</a>
+				</li>
+				<li class="pin">
+					<a href="#">品牌</a>
+				</li>
+				<li>
+					<a href="#">Mzine</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="nav1">
+		<div class="new">
+			<ul>
+				<li>
+					<a href="#">本周新品</a>
+				</li>
+				<li>
+					<a href="#">本月新品</a>
+				</li>
+				<li>
+					<a href="#">当季新品</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">男士 Man</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">配饰 Accessories</a>
+				</li>
+				<li>
+					<a href="#">鞋履 Shoes</a>
+				</li>
+				<li>
+					<a href="#">服装 Clothes</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">女士</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">配饰 Accessories</a>
+				</li>
+				<li>
+					<a href="#">鞋履 Shoes</a>
+				</li>
+				<li>
+					<a href="#">服装 Clothes</a>
+				</li>
+			</ul>
+		</div>
+		<div class="women">
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="man">
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+		</div>
+		<div class="children">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="clock">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+		<div class="pin">
+
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+
+			</ul>
+			<ul>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+				<li>
+					<a href="#">包袋 Bags</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+<div id="cebianlan">
+	<ul>
+		<li><a href="http://www.meici.com/app"><i class="iconfont">&#xe621;</i></a></li>
+		<li><a href="http://10086.com"><i class="iconfont">&#xe640;</i></a></li>
+		<li><a href="http://qq.com"><i class="iconfont">&#xe613;</i></a></li>
+		<li><i class="iconfont">&#xf0051;</i></li>
+	</ul>
+	<div class="er"><img src="images/down_app.png"></div>
+</div>
+
+<div class="tmain">
+<div class="main">
+	<div class="center-top"><h3>新近单品</h3></div>
+	<div class="left">
+		<div class="shaitop shaixuan">
+			<div class="m-tit">筛选</div>
+			<div class="stmain">
+				<div class="oneh">
+					<div class="oneh1">
+						<span>商品类别</span>
+						<span class="xuanxiang">牛仔裤</span>
+					</div>
+					<div class="oneh2">X</div>
+				</div>
+				<div class="twoh">
+					清楚全部
+				</div>
+			</div>
+		</div>
+		<div class="shaixuan">
+			<div class="m-tit">商品分类<span>+</span></div>
+			<div class="hide default">
+			<div class="del">清除条件</div>
+			<ul>
+				<li class="slc"><span>▶ 包袋</span>
+					<ul >
+						<li><input type="checkbox" />选择全部</li>
+						<li><input type="checkbox" />手提包</li>
+					</ul>
+				</li>
+				<li class="slc"><span>▶ 配饰</span>
+					<ul>
+						<li><input type="checkbox">选择全部</li>
+						<li><input type="checkbox">腰带</li>
+						<li><input type="checkbox">短线包</li>
+						<li><input type="checkbox">畅想包</li>
+						<li><input type="checkbox">围巾</li>
+						<li><input type="checkbox">卡突</li>
+					</ul>
+				</li>
+				<li class="slc"><span>▶ 鞋履</span>
+					<ul>
+						<li><input type="checkbox">选择全部</li>
+						<li><input type="checkbox">单鞋</li>
+						<li><input type="checkbox">休闲皮鞋</li>
+						<li><input type="checkbox">乐福鞋</li>
+						<li><input type="checkbox">运动鞋</li>
+					</ul>
+				</li>
+				<li class="slc"><span>▶ 服装</span>
+					<ul>
+						<li><input type="checkbox">选择全部</li>
+						<li><input type="checkbox">牛仔裤</li>
+						<li><input type="checkbox">卫衣</li>
+						<li><input type="checkbox">T恤</li>
+						<li><input type="checkbox">衬衫</li>
+						<li><input type="checkbox">针织/毛衫</li>
+						<li><input type="checkbox">夹克</li>
+						<li><input type="checkbox">POLO衫</li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<div class="shaixuan">
+			<div class="m-tit">性别<span>+</span></div>
+			<div class="hide">
+			<div class="del">清除条件</div>
+			<ul>
+				<li><input type="checkbox">男女</li>
+				<li><input type="checkbox">男士</li>
+				<li><input type="checkbox">女士</li>
+			</ul>
+			</div>
+		</div>
+		<div class="shaixuan" id="pinpai">
+			<div class="m-tit">品牌<span>+</span></div>
+			<div class="hide">
+			<div class="del">清除条件</div>
+			<ul>
+				<li><input type="checkbox">丹尼尔•惠灵顿</li>
+				<li><input type="checkbox">杜嘉班纳</li>
+				<li><input type="checkbox">朱塞佩•萨诺</li>
+				<li><input type="checkbox">古驰</li>
+				<li><input type="checkbox">高田贤三</li>
+				<li><input type="checkbox">莫斯奇诺</li>
+				<li><input type="checkbox">古驰</li>
+				<li><input type="checkbox">高田贤三</li>
+				<li><input type="checkbox">莫斯奇诺</li>
+				<li><input type="checkbox">高田贤三</li>
+				<li><input type="checkbox">莫斯奇诺</li>
+				<li><input type="checkbox">古驰</li>
+				<li><input type="checkbox">高田贤三</li>
+				<li><input type="checkbox">莫斯奇诺</li>
+			</ul>
+			</div>
+		</div>
+		<div class="shaixuan" id="jiage">
+			<div class="m-tit">价格<span>+</span></div>
+			<div class="hide">
+			<p><input type="text" placeholder="¥ 最低价" /> -
+			<input type="text" placeholder="¥ 最高价" /></p>
+			<div class="queren"><span>确认</span></div>
+			</div>
+		</div>
+		<div class="shaixuan" id="clr">
+			<div class="m-tit">颜色<span>+</span></div>
+			<div class="hide">
+			<div class="del">清除条件</div>
+			<ul>
+				<li><input type="checkbox"><span></span>黑色</li>
+				<li><input type="checkbox"><span></span>白色</li>
+				<li><input type="checkbox"><span></span>粉色</li>
+				<li><input type="checkbox"><span></span>红色</li>
+				<li><input type="checkbox"><span></span>绿色</li>
+				<li><input type="checkbox"><span></span>灰色</li>
+				<li><input type="checkbox"><span></span>金色</li>
+				<li><input type="checkbox"><span></span>银色</li>
+				<li><input type="checkbox"><span></span>棕色</li>
+				<li><input type="checkbox"><span></span>紫色</li>
+				<li><input type="checkbox"><span></span>多色</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="right-top"><span>排序：</span><span>新品</span><span>人气</span><span>价格</span></div>
+		<div class="shoplist">
+		<!--<div class="shop1"><img src="images/new-img/xin (1).jpg"><p class="bold">DolceGabbana 杜嘉班纳</p><p>全棉 男士 内裤</p><p>¥290.00 <span>¥410.00</span></p></div>-->
+		</div>
+	</div>
+</div>
+</div>
+
+		<div id="serve">
+			<div class="s-left">
+				<ul>
+					<li>购物指南</a></li>
+					<li><a href="#">购物流程</a></li>
+					<li><a href="#">配送方式</a></li>
+				</ul>
+				<ul>
+					<li>支付方式</li>
+					<li><a href="#">如何付款</a></li>
+					<li><a href="#">发票制度</a></li>
+				</ul>
+				<ul>
+					<li>商品说明</li>
+					<li><a href="#">商品尺码</a></li>
+					<li><a href="#">商品包装</a></li>
+				</ul>
+				<ul>
+					<li>客服中心</li>
+					<li><a href="#">七天包换</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<div class="s-center1">
+				<p>客服电话</p>
+				<h1>400-250-630</h1>
+				<p>工作日 08：30-21：30</p>
+				<p>节假日 21：30-08：30</p>
+			</div>
+			<div class="s-center2">
+				<p>订阅美西杂志</p>
+				<p><input type="email" placeholder="E-mail"></p>
+				<p>
+					<div>即刻订阅</div>
+				</p>
+			</div>
+			<div class="s-right">
+				<div class="app">
+					<p>美西APP</p>
+					<div></div>
+				</div>
+				<div class="weixin">
+					<p>官方微信</p>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer">
+				<img src="images/footer1.png">
+				<div class="left">
+					<p>
+						<ul>
+							<li>
+								<a href="#">媒体报道</a>
+							</li>
+							<li>
+								<a href="#">正品保证</a>
+							</li>
+							<li>
+								<a href="#">业务合作</a>
+							</li>
+							<li>
+								<a href="#">隐私声明</a>
+							</li>
+							<li>
+								<a href="#">加入美西</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+						</ul>
+					</p>
+					<br />
+					<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+					<p>沪ICP备09001221号&nbsp;&nbsp;沪公网安备11010802017116号</p>
+				</div>
+				<div class="right">
+					<div class="rtop">
+						合作伙伴
+					</div>
+					<div class="rbottom">
+						<img src="images/images/footer (6).png" />
+						<img src="images/images/footer (7).png" />
+						<img src="images/images/footer (8).png" />
+						<img src="images/images/footer (9).png" />
+						<img src="images/images/footer (10).png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+	</body>
+</html>
+
+<script>
+	$(".shaixuan .m-tit").click(function (){
+		if ($(this).next($(".hide")).css("display")=="none") {
+			$(".shaixuan .m-tit").find("span").html("+")
+			$(this).next($(".hide")).slideDown().parent().siblings().find(".hide").slideUp().find("ul li ul").css("display","none")
+			$(this).find("span").html("-")
+		}else {
+			$(this).next($(".hide")).slideUp()
+			$(this).find("span").html("+")
+		}
+	})
+	$(".slc").children("span").click(function(){
+		if ($(this).parent().find("ul").css("display")=="none") {
+			$(this).parent().find("ul").css("display","block")
+		}else{
+			$(this).parent().find("ul").css("display","none")
+			
+		}
+	})
+	$(window).scroll(function(){
+		if ($(window).scrollTop()>="316") {	
+			
+			if ($(window).scrollTop()>=($("#serve").offset().top-$(window).height())) {
+				$(".main .left").slideUp(200)
+		}else{ 
+			$(".main .left").slideDown()
+			$(".main .left").css("position","fixed")
+			$(".main .left").css("top","5px")
+		}
+		}else{
+			$(".main .left").css("position","")
+		}
+	})
+	var shophtml=""
+	for (var i=1;i<30;i++) {
+		shophtml+=`<div class="shop${i}"><img src="images/new-img/xin (${i}).jpg"><p class="bold">DolceGabbana 杜嘉班纳</p><p>全棉 男士 内裤</p><p>¥290.00 <span>¥410.00</span></p></div>`
+		$(".shoplist").html(shophtml)
+	}
+	$(".shoplist div").each(function (index){
+		$(".shoplist div").click(function (){
+		location.href="detail.html?shop="+$(this).index();
+	})
+	})
+	var arrtitle=["新近单品","全球购","女士","男士","童装","腕表","品牌","Mzine"]
+	var hf=location.href;
+	var arr=hf.split("?")[1];
+	var shop=arr.split("&")[0].split("=")[1];
+	if (shop=="no") {
+		$(".main .center-top").css("display","none")
+	}else{
+		$(".main .center-top").css("display","block")
+		$(".main .center-top h3").html(arrtitle[shop-1])
+	}
+	$(".stmain").find("div").click(function (){
+		$(".stmain").find(".xuanxiang").html("")
+		$(".shaixuan").find("input").prop("checked",false)
+		$(".shaitop").hide()
+	})
+	$(".main .left input").click(function (){
+		if ($(".main .left :checked").size()>0){
+		if ($(this).parent().text()=="选择全部"){
+			$(this).parent().nextAll().find("input").prop("checked",$(this).prop("checked"))
+		}
+			var a="";
+			$(".main .left input:checked").each(function(){
+				if ($(this).parent().text()!="选择全部") {
+				a+=($(this).parent().text())+","
+				}
+			})
+			$(".xuanxiang").html(a)
+			$(".shaitop").show()
+			console.log($(".main .left :checked").size())
+			if ($(".main .left :checked").size()<1) {
+				$(".shaitop").hide()
+			}
+		}
+	})
+</script>
+<script src="floatcart.js"></script>

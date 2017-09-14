@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="cookie.js"></script>
+		<script src="generality.js"></script>
+		<link rel="stylesheet" type="text/css" href="font_sl7hyf8f4fvtpgb9/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="generality.css" />
+		<link rel="stylesheet" type="text/css" href="font_tbsvj6av8f2sm7vi/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="font_4x0z3wlu4mpfogvi/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="cart.css" />
+		<style>
+			.tlunbo {
+				padding-bottom: 20px;
+				padding-top: 20px;
+			}
+			
+			.dmtitle {
+				height: 75px;
+				overflow: hidden;
+				margin-left: -40px;
+				border-bottom: 1px #ddd solid;
+				margin-bottom: 15px;
+			}
+			
+			.dmtitle div {
+				float: left;
+			}
+			
+			.dmtleft {
+				font-size: 45px;
+				font-family: "华文仿宋";
+			}
+			
+			.dmtright {
+				font-size: 14px;
+				margin-top: 12px;
+				margin-left: 7px;
+			}
+			
+			.lunbo {
+				position: relative;
+				width: 1200px;
+				background: #fff;
+				margin: 0 auto;
+				padding: 30px 75px;
+				padding-bottom: 0;
+				overflow: hidden;
+				border: 1px #ddd solid;
+			}
+			
+			#banner {
+				width: 960px;
+				margin: 25px auto;
+				overflow: hidden;
+				position: relative;
+				background: #fff;
+				height: 335px;
+			}
+			
+			#banner ul li {
+				list-style: none;
+				float: left;
+			}
+			
+			#banner ul li div {
+				float: left;
+				width: 240px;
+				padding: 50px;
+			}
+			
+			#banner ul li div p {
+				font-size: 12px;
+				text-align: center;
+				margin-left: -22px;
+			}
+			
+			#banner ul li div p:nth-child(4) {
+				color: #aaa;
+				margin-top: 10px;
+			}
+			
+			#banner ul li div img {
+				width: 80%;
+			}
+			
+			#banner ul {
+				width: 3600px
+			}
+			
+			#big-left,
+			#big-right {
+				float: left;
+				width: 50px;
+				height: 70px;
+				position: absolute;
+				top: 230px;
+				font-size: 70px;
+				line-height: 50px;
+				text-align: center;
+				cursor: pointer;
+				color: #eee;
+				margin-left: -75px;
+			}
+			
+			#big-left {
+				right: 0;
+			}
+			
+			.main {
+				width: 1200px;
+				margin: 20px auto;
+				font-size: 13px;
+			}
+			
+			.main .noshop {
+				height: 362px;
+				padding: 40px;
+				border: 1px #ddd solid;
+			}
+			
+			.main .noshop p {
+				text-align: center;
+				margin: 20px;
+			}
+			
+			.main .noshop p:nth-child(1) .iconfont {
+				font-size: 40px;
+				color: #ccc;
+			}
+			
+			.main .noshop p:nth-child(2) {
+				font-size: 20px;
+				color: #bbb;
+			}
+			
+			.main .noshop p:nth-child(3) {
+				font-size: 12px;
+				color: #bbb;
+			}
+			
+			.main .noshop p:nth-child(4) {
+				width: 150px;
+				height: 40px;
+				background: #333333;
+				margin: 30px auto;
+				color: #fff;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			
+			.main .ctitle {
+				height: 45px;
+				background: #f5f5f5;
+				padding: 0 28px;
+			}
+			
+			.main .ctitle span {
+				display: inline-block;
+				line-height: 45px;
+			}
+			
+			.main .ctitle span:nth-child(1) {
+				width: 190px;
+			}
+			
+			.main .ctitle span:nth-child(2) {
+				width: 250px;
+			}
+			
+			.main .ctitle span:nth-child(3) {
+				width: 170px;
+				text-align: center;
+			}
+			
+			.main .ctitle span:nth-child(4) {
+				width: 200px;
+				text-align: center;
+			}
+			
+			.main .ctitle span:nth-child(5) {
+				width: 140px;
+				text-align: center;
+			}
+			
+			.main .ctitle span:nth-child(6) {
+				width: 100px;
+				text-align: center;
+			}
+			
+			.main .cartlist .cmain {
+				margin-top: 10px;
+				height: 106px;
+				padding: 25px;
+				border: 1px #ddd solid;
+			}
+			
+			.main .cartlist .cmain div {
+				float: left;
+				overflow: hidden;
+			}
+			
+			.main .cartlist .cmain div:nth-child(1) {
+				width: 190px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(1) img {
+				width: 75px;
+				height: 90px;
+				line-height: 152px;
+				position: relative;
+				top: -20px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(1) input {
+				position: relative;
+				top: -60px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(2) {
+				width: 250px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(2) p {
+				margin: 5px 0;
+			}
+			
+			.main .cartlist .cmain div:nth-child(2) p:last-child {
+				color: #ccc;
+			}
+			
+			.main .cartlist .cmain div:nth-child(3) {
+				width: 175px;
+				position: relative;
+				top: 20px;
+				text-align: center;
+			}
+			
+			.main .cartlist .cmain div:nth-child(4) {
+				position: relative;
+				top: 17px;
+				text-align: center;
+				border: 1px #ddd solid;
+				line-height: 25px;
+				margin: 0 55px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(4) p {
+				width: 105px;
+				height: 25px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(4) p input {
+				height: 25px;
+				width: 57px;
+				border: none;
+				border-right: 1px #ddd solid;
+				border-left: 1px #ddd solid;
+				text-align: center;
+			}
+			
+			.main .cartlist .cmain div:nth-child(4) p span {
+				width: 22px;
+				display: inline-block;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.main .cartlist .cmain div:nth-child(5) {
+				width: 140px;
+				text-align: center;
+				position: relative;
+				top: 20px;
+				margin-right: 40px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(6) {
+				width: 100px;
+				position: relative;
+				cursor: pointer;
+				top: 8px;
+			}
+			
+			.main .cartlist .cmain div:nth-child(6) p {
+				margin: 5px 0;
+				cursor: pointer;
+			}
+			
+			.main .csum {
+				height: 215px;
+				margin-top: 10px;
+				border: #ccc 1px solid;
+				padding: 27px;
+			}
+			
+			.main .csum .top {
+				overflow: hidden;
+			}
+			
+			.main .csum .top div {
+				width: 420px;
+			}
+			
+			.main .csum .top .lt {
+				float: left;
+			}
+			
+			.main .csum .top .lt span {
+				cursor: pointer;
+				display: inline-block;
+				margin-right: 20px;
+			}
+			.main .csum .top .lt span input {
+				margin-right: 20px;
+			}
+			.main .csum .top .rt {
+				float: right;
+				text-align: right;
+				border-bottom: 1px #bbb solid;
+				line-height: 25px;
+				padding-bottom: 20px;
+			}
+			
+			.main .csum .top .rt span {
+				color: red;
+			}
+			
+			.main .csum .top .rt span:nth-child(2) {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+			.main .csum .bottom {
+				margin-top: 30px;
+				background: #fcfcfc;
+			}
+			
+			.main .csum .bottom div {
+				height: 47px;
+				border-radius: 5px;
+				line-height: 47px;
+				text-align: center;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			
+			.main .csum .bottom .lb {
+				float: left;
+				width: 138px;
+				border: 1px #ddd solid;
+				color: #666;
+			}
+			
+			.main .csum .bottom .rb {
+				float: right;
+				width: 165px;
+				background: #c43f40;
+				color: #fff;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="top">
+			<div id="top1">
+				<div class="left" id="loginid">
+					<a href="sign.html">注册 </a>|
+					<a href="login.html"> 登录</a> &nbsp;
+					<a href="order.html">订单查询</a>
+				</div>
+				<div class="right"><span>客服热线：400-600-6618</span><span class="guanzhu">☆ 关注我们</span><span id="cart"><i class="iconfont">&#xe63d;</i> 购物袋（<span class="sumcart">0</span>）|<i class="iconfont">&#xf0051;</i></span></div>
+			</div>
+		</div>
+		<div id="header">
+			<div class="left"><img src="images/ewm.jpg"></div>
+			<div class="center"><img src="images/首页1_05.jpg"></div>
+			<div class="search"><input type="text" placeholder="请输入关键字"><span><i class="iconfont">&#xe66f;</i></span></div>
+		</div>
+		<div id="tnav">
+			<div id="nav">
+				<ul id="navnav">
+					<li>
+						<a href="home.html">首页</a>
+					</li>
+					<li class="new">
+						<a href="#">新近单品</a>
+					</li>
+					<li>
+						<a href="#">全球购</a>
+					</li>
+					<li class="women">
+						<a href="#">女士</a>
+					</li>
+					<li class="man">
+						<a href="#">男士</a>
+					</li>
+					<li class="children">
+						<a href="#">童装</a>
+					</li>
+					<li class="clock">
+						<a href="#">腕表</a>
+					</li>
+					<li class="pin">
+						<a href="#">品牌</a>
+					</li>
+					<li>
+						<a href="#">Mzine</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="nav1">
+			<div class="new">
+				<ul>
+					<li>
+						<a href="#">本周新品</a>
+					</li>
+					<li>
+						<a href="#">本月新品</a>
+					</li>
+					<li>
+						<a href="#">当季新品</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">男士 Man</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">配饰 Accessories</a>
+					</li>
+					<li>
+						<a href="#">鞋履 Shoes</a>
+					</li>
+					<li>
+						<a href="#">服装 Clothes</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">女士</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">配饰 Accessories</a>
+					</li>
+					<li>
+						<a href="#">鞋履 Shoes</a>
+					</li>
+					<li>
+						<a href="#">服装 Clothes</a>
+					</li>
+				</ul>
+			</div>
+			<div class="women">
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+			</div>
+			<div class="man">
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="children">
+
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clock">
+
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pin">
+
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+
+				</ul>
+				<ul>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+					<li>
+						<a href="#">包袋 Bags</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="cebianlan">
+			<ul>
+				<li>
+					<a href="http://www.meici.com/app"><i class="iconfont">&#xe666;</i></a>
+				</li>
+				<li>
+					<a href="http://10086.com"><i class="iconfont">&#xe640;</i></a>
+				</li>
+				<li>
+					<a href="http://qq.com"><i class="iconfont">&#xe613;</i></a>
+				</li>
+				<li><i class="iconfont">&#xf0051;</i></li>
+			</ul>
+			<div class="er"><img src="images/down_app.png"></div>
+		</div>
+
+		<div class="main">
+			<div class="noshop">
+				<div>
+					<p><i class="iconfont">&#xe63d;</i></p>
+					<p>购物车内暂时没有商品</p>
+					<p>登录后将显示您之前加入的商品</p>
+					<p class="locshop">随便逛逛</p>
+				</div>
+			</div>
+			<div class="hasshop">
+				<!--<div class="ctitle">
+			<span><input type="checkbox">&nbsp;&nbsp;全选</span>
+			<span>商品信息</span>
+			<span>单价</span>
+			<span>数量</span>
+			<span>小计</span>
+		</div>
+			<div class="cartlist">
+				<div class="cmain">
+			<div><input type="checkbox" /><img src="images/new-img/xin (2).jpg"></div>
+			<div>
+				<p>Burberry 博伯利</p>
+				<p>真皮 男士 手提包</p>
+				<p>颜色：蓝色</p>
+			</div>
+			<div>¥11050.00</div>
+			<div><p><span>-</span><input type="text" value="1"><span>+</span></p></div>
+			<div>¥11050.00</div>
+			<div><p>加入收藏</p><p class="delshop">删除</p></div>
+			</div>
+		</div>
+		<div class="csum">
+			<div class="top">
+			<div class="lt">
+				<span>
+				<input type="checkbox" id="selectAll"/>
+				全选</span>
+				<span>删除选中的商品</span>
+				<span>加入收藏</span>
+			</div>
+			<div class="rt">
+	<p>
+		已选商品&nbsp;&nbsp;<span>0</span>&nbsp;&nbsp;件&nbsp;&nbsp;&nbsp;&nbsp;
+		合计（不含运费、税费）：¥&nbsp;<span>0.00</span></p>
+		<p>活动折扣：-¥0.00</p>
+			</div>
+			</div>
+			<div class="bottom">
+			<div class="lb">> 继续购物</div>
+			<div class="rb">立即结算</div>
+			</div>
+		</div>-->
+
+			</div>
+		</div>
+		<div class="tlunbo">
+			<div class="lunbo">
+				<div class="dmtitle">
+					<div class="dmtleft">M/ </div>
+					<div class="dmtright">
+						<p>Product Recommend</p>
+						<p>相关推荐</p>
+					</div>
+				</div>
+				<div id="banner">
+					<ul>
+						<li>
+							<div><img src="images/new-img/xin (24).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (25).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (26).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (27).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+						</li>
+						<li>
+							<div><img src="images/new-img/xin (1).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (2).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (3).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (4).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+						</li>
+						<li>
+							<div><img src="images/new-img/xin (5).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (6).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (7).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+							<div><img src="images/new-img/xin (8).jpg">
+								<p>Gucci</p>
+								<p>古驰</p>
+								<p>已加入入收藏</p>
+							</div>
+
+						</li>
+					</ul>
+
+				</div>
+				<div id="big-left">></div>
+				<div id="big-right">
+					<</div>
+				</div>
+			</div>
+			<div id="serve">
+				<div class="s-left">
+					<ul>
+						<li>购物指南</a>
+						</li>
+						<li>
+							<a href="#">购物流程</a>
+						</li>
+						<li>
+							<a href="#">配送方式</a>
+						</li>
+					</ul>
+					<ul>
+						<li>支付方式</li>
+						<li>
+							<a href="#">如何付款</a>
+						</li>
+						<li>
+							<a href="#">发票制度</a>
+						</li>
+					</ul>
+					<ul>
+						<li>商品说明</li>
+						<li>
+							<a href="#">商品尺码</a>
+						</li>
+						<li>
+							<a href="#">商品包装</a>
+						</li>
+					</ul>
+					<ul>
+						<li>客服中心</li>
+						<li>
+							<a href="#">七天包换</a>
+						</li>
+						<li>
+							<a href="#">常见问题</a>
+						</li>
+					</ul>
+				</div>
+				<div class="s-center1">
+					<p>客服电话</p>
+					<h1>400-250-630</h1>
+					<p>工作日 08：30-21：30</p>
+					<p>节假日 21：30-08：30</p>
+				</div>
+				<div class="s-center2">
+					<p>订阅美西杂志</p>
+					<p><input type="email" placeholder="E-mail"></p>
+					<p>
+						<div>即刻订阅</div>
+					</p>
+				</div>
+				<div class="s-right">
+					<div class="app">
+						<p>美西APP</p>
+						<div></div>
+					</div>
+					<div class="weixin">
+						<p>官方微信</p>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="footer">
+					<img src="images/footer1.png">
+					<div class="left">
+						<p>
+							<ul>
+								<li>
+									<a href="#">媒体报道</a>
+								</li>
+								<li>
+									<a href="#">正品保证</a>
+								</li>
+								<li>
+									<a href="#">业务合作</a>
+								</li>
+								<li>
+									<a href="#">隐私声明</a>
+								</li>
+								<li>
+									<a href="#">加入美西</a>
+								</li>
+								<li>
+									<a href="#">联系我们</a>
+								</li>
+							</ul>
+						</p>
+						<br />
+						<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+						<p>沪ICP备09001221号&nbsp;&nbsp;沪公网安备11010802017116号</p>
+					</div>
+					<div class="right">
+					<div class="rtop">
+						合作伙伴
+					</div>
+					<div class="rbottom">
+						<img src="images/images/footer (6).png" />
+						<img src="images/images/footer (7).png" />
+						<img src="images/images/footer (8).png" />
+						<img src="images/images/footer (9).png" />
+						<img src="images/images/footer (10).png" />
+					</div>
+				</div>
+				</div>
+			</div>
+
+	</body>
+
+</html>
+<script>
+	//轮播
+	var timer = setInterval(autoPlay, 4100);
+
+	function autoPlay() {
+		$("#banner ul").animate({
+			"marginLeft": -960
+		}, 500, function() {
+			$("#banner ul").css("margin-left", 0)
+				.find("li:first")
+				.appendTo($("#banner ul"))
+			flag = true;
+		})
+	}
+	var flag = true;
+	$("#banner").mouseover(function() {
+		clearInterval(timer);
+	})
+	$("#banner").mouseout(function() {
+		timer = setInterval(autoPlay, 4000);
+	})
+	$("#big-left").click(function() {
+		if(flag) {
+			autoPlay();
+			flag = false;
+		}
+	})
+	$("#big-right").click(function() {
+		if(flag) {
+			$("#banner ul").find("li:last").prependTo($("#banner ul")).end()
+				.css("margin-left", -960)
+				.animate({
+					"marginLeft": 0
+				}, 500, function() {
+					flag = true;
+				});
+			flag = false;
+		}
+	})
+
+	//读取购物车
+	$(function() {
+		var arr = getCookie("shoplist");
+		var html = "";
+		for(var i in arr) {
+			var shopinfo = arr[i];
+			html += `<div class="cmain" data-id="${shopinfo.id}"><div><input type="checkbox" class="ck"/><img src="${shopinfo.src}" class="loac"></div><div><p class="loac">${shopinfo.name}</p><p class="loac">${shopinfo.type}</p><p>颜色：蓝色</p></div><div>${shopinfo.price}</div><div><p><span class="updateCount">-</span><input type="text" value="${shopinfo.count}" class="shop-count"><span class="updateCount">+</span></p></div><div>¥<span class="sumPrice">${shopinfo.count*shopinfo.price}.00</span></div><div><p>加入收藏</p><p class="delshop">删除</p></div></div>`;
+		}
+		var html1 = '<div class="ctitle"><span><input type="checkbox">&nbsp;&nbsp;全选</span><span>商品信息</span><span>单价</span><span>数量</span><span>小计</span></div>';
+		var html3 = '<div class="csum"><div class="top"><div class="lt"><span><input type="checkbox"  id="selectAll"/>全选</span><span>加入收藏</span></div><div class="rt"><p>已选商品&nbsp;&nbsp;<span class="count2">0</span>&nbsp;&nbsp;件&nbsp;&nbsp;&nbsp;&nbsp;合计（不含运费、税费）：¥&nbsp;<span class="money2">0.00</span></p><p>活动折扣：-¥0.00</p></div></div><div class="bottom"><div class="lb">> 继续购物</div><div class="rb">立即结算</div></div></div>';
+		var html2 = '<div class="cartlist">' + html + '</div>';
+		var str = document.cookie;
+		var split = str.split("=")[0]
+		if(getCookie("shoplist") == "" || arr.length == 0) {
+			$(".noshop").css("display", "block")
+		} else {
+			$(".hasshop").html(html1 + html2 + html3);
+			$(".noshop").css("display", "none")
+		}
+		
+		$(".locshop").click(function(){
+		location.href="shop.html"
+		})
+		
+		//全选
+		$("#selectAll").click(function() {
+			$(".ck").prop("checked", $(this).prop("checked"));
+			jiesuan();
+		})
+		$(".cartlist").on("click", ".delshop", function() {
+			var f = confirm("确定删除该商品吗");
+			$(".sumcart").html(arr.length);
+			if (f) {
+			var id = $(this).parent().parent().data("id"); //获取当前要删除的商品编号 和名称
+			var pname = $(this).parent().parent().data("name"); //获取当前要删除的商品编号 和名称
+			for(var i in arr) {
+				if(id == arr[i].id) {
+					arr.splice(i, 1);
+					//操作数组同时，也要改变cookie
+					setCookie("shoplist", JSON.stringify(arr));
+					$(this).parent().parent().remove();
+				}
+			}
+			if(getCookie("shoplist") == "" || arr.length == 0) {
+				$(".noshop").css("display", "block")
+				$(".hasshop").html("")
+			}
+			}else{
+			}
+		})
+
+		//加减操作
+		$(".updateCount").click(function() {
+			var sign = $(this).html();
+			var id = $(this).parent().parent().parent().data("id"); //获取当前要删除的商品编号 和名称
+			//取出数量
+			var num = $(this).parent().find(".shop-count").val();
+			if(sign == "-" && num == 1) {
+				return;
+			}
+			for(var i in arr) {
+				if(id == arr[i].id) {
+					sign == "+" ? arr[i].count++ : arr[i].count--;
+					setCookie("shoplist", JSON.stringify(arr));
+					$(this).parent().find(".shop-count").val(arr[i].count);
+					console.log(arr[i].count)
+					$(this).parent().parent().parent().find(".sumPrice").html(arr[i].count * arr[i].price + ".00");
+				}
+			}
+		})
+		$(".loac").click(function (){
+		location.href=`detail.html?shop=${($(this).parent().parent().data("id"))-1}`
+		})
+		//点击复选框 结算
+		$(".ck").click(function() {
+			jiesuan();
+		})
+		
+		$(".rb").click(function(){
+			if (getCookie("address")=="") {
+				alert("请先填写收货地址,并设置默认地址")
+				location.href="address.html"
+			}else{
+				var brr=[]
+				$(".cmain").each(function(){
+				if($(this).find(".ck").prop("checked")==true) {
+					brr.push($(this).index())
+				}
+				setCookie("cartlist",JSON.stringify(brr))
+			})
+				location.href="suborder.html?shop=-1"
+			}
+		})
+		$(".lb").click(function(){
+			location.href="shop.html?list=no"
+		})
+	})
+	//结算
+	function jiesuan() {
+		var money = 0;
+		var count = 0;
+		$(".ck:checked").each(function() {
+			count += parseInt($(this).parent().parent().find(".shop-count").val())
+			money += parseInt($(this).parent().parent().find(".sumPrice").html())
+		})
+		$(".count2").html(count);
+		$(".money2").html(money + ".00");
+	}
+	
+	
+	
+	
+	
+</script>
